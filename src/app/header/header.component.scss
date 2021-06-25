@@ -1,0 +1,14 @@
+header{
+  background: navy;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  a{
+    text-decoration: none;
+    margin-right: 3em;
+    font-size: 3em;
+    &:visited{
+      color: white;
+    }
+  }
+}
