@@ -1,6 +1,4 @@
 header {
-  background: #09519d;
-  color: white;
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -9,6 +7,7 @@ header {
   }
   .logo {
     h1 {
+      color: white;
       text-transform: uppercase;
       span {
         font-weight: 200;
@@ -25,6 +24,7 @@ header {
       font-size: 1.3em;
       padding: 0.5em 2em;
       transition: 0.2s;
+      color: white;
       &:visited {
         color: white;
       }

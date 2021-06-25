@@ -1,7 +1,6 @@
 section {
   display: flex;
   justify-content: space-around;
-  background: #d0e9f5;
   height: 50vh;
   padding: 3% 10%;
   .text {
@@ -9,11 +8,9 @@ section {
     h1 {
       font-size: 5em;
       margin: 0;
-      color: #09519d;
     }
     p {
       font-size: 1.8em;
-      color: #407ccd;
       margin: 0 0 10px;
     }
     button {

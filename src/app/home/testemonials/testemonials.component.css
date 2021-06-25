@@ -17,7 +17,6 @@ section #ampersand {
 }
 
 section #heading {
-  color: #09519d;
   font-weight: 900;
   font-size: 3em;
   text-align: center;
@@ -43,13 +42,11 @@ section .cards .card img {
 }
 
 section .cards .card h3 {
-  color: #09519d;
   font-size: 2em;
 }
 
 section .cards .card p {
   font-size: 1.5em;
-  color: #407bcd;
   line-height: 45px;
 }
 /*# sourceMappingURL=testemonials.component.css.map */

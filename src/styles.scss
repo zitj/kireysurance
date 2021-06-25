@@ -1,8 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+#heading,
+h1,
+h2,
+h3,
+h4 {
+  color: #09519d;
+}
+p {
+  color: #407bcd;
+}
+header,
+#bottom {
+  background: #09519d;
+}
+#hero,
+footer {
+  background: #d0e9f5;
 }

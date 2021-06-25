@@ -1,15 +1,14 @@
-section {
-  background: #d0e9f5;
+footer {
   height: 70vh;
   position: relative;
 }
 
-section svg {
+footer svg {
   position: absolute;
   top: -30%;
 }
 
-section .informations {
+footer .informations {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,23 +20,21 @@ section .informations {
   bottom: 28%;
 }
 
-section .informations .information {
+footer .informations .information {
   text-align: center;
 }
 
-section .informations .information h4 {
+footer .informations .information h4 {
   font-size: 2.5em;
-  color: #09519d;
   margin-bottom: 0.5em;
 }
 
-section .informations .information p {
+footer .informations .information p {
   margin: 0 0 0.5em 0;
   font-size: 1.5em;
-  color: #407bcd;
 }
 
-section .informations .information .socialMedia {
+footer .informations .information .socialMedia {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,24 +42,22 @@ section .informations .information .socialMedia {
       justify-content: space-around;
 }
 
-section .informations .information .socialMedia img {
+footer .informations .information .socialMedia img {
   height: 50px;
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
-section .informations .information .socialMedia img:hover {
+footer .informations .information .socialMedia img:hover {
   opacity: 0.8;
 }
 
-section .informations .information .socialMedia img:active {
+footer .informations .information .socialMedia img:active {
   opacity: 1;
 }
 
-section #bottom {
-  background: #09519d;
-  color: white;
+footer #bottom {
   text-transform: uppercase;
   position: absolute;
   bottom: 0%;
@@ -70,7 +65,11 @@ section #bottom {
   width: 100%;
 }
 
-section #bottom h2 span {
+footer #bottom h2 {
+  color: white;
+}
+
+footer #bottom h2 span {
   font-weight: 300;
 }
 /*# sourceMappingURL=footer.component.css.map */

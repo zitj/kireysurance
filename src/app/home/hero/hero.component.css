@@ -4,7 +4,6 @@ section {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: #d0e9f5;
   height: 50vh;
   padding: 3% 10%;
 }
@@ -16,12 +15,10 @@ section .text {
 section .text h1 {
   font-size: 5em;
   margin: 0;
-  color: #09519d;
 }
 
 section .text p {
   font-size: 1.8em;
-  color: #407ccd;
   margin: 0 0 10px;
 }
 

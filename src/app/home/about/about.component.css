@@ -16,12 +16,10 @@ section .text {
 section .text h2 {
   font-size: 5.5em;
   margin-bottom: 0.4em;
-  color: #09519d;
 }
 
 section .text p {
   font-size: 2em;
-  color: #407bcd;
   line-height: 60px;
 }
 
