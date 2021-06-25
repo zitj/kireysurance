@@ -4,6 +4,7 @@ footer {
   svg {
     position: absolute;
     top: -30%;
+    width: 100%;
   }
   .informations {
     position: absolute;
@@ -51,5 +52,17 @@ footer {
         font-weight: 300;
       }
     }
+  }
+}
+@media (max-width: 1300px) {
+  footer {
+    .informations {
+      bottom: 40%;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  footer {
+    height: 40vh;
   }
 }

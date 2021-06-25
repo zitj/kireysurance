@@ -1,6 +1,6 @@
 section {
   height: 80vh;
-  margin-top: 20em;
+  margin-top: 25%;
   #ampersand {
     color: #5db6dd;
     font-weight: 900;
@@ -36,6 +36,63 @@ section {
       p {
         font-size: 1.5em;
         line-height: 45px;
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  section {
+    margin-top: 22%;
+    height: 80vh;
+    #ampersand {
+      transform: translate(-50%, -35%);
+    }
+    .cards {
+      .card {
+        img {
+          height: 180px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  section {
+    height: 90vh;
+    .cards {
+      margin-top: 5%;
+      .card {
+        width: 350px;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  section {
+    height: 40vh;
+    margin-top: 25%;
+    #ampersand {
+      top: 40%;
+      font-size: 25em;
+      opacity: 0.08;
+    }
+    #heading {
+      font-size: 2em;
+    }
+    .cards {
+      margin-top: 0;
+      .card {
+        width: 300px;
+        h3 {
+          font-size: 1.6em;
+        }
+        p {
+          font-size: 1.2em;
+          line-height: 30px;
+        }
+        img {
+          height: 100px;
+        }
       }
     }
   }

@@ -6,6 +6,7 @@ footer {
 footer svg {
   position: absolute;
   top: -30%;
+  width: 100%;
 }
 
 footer .informations {
@@ -71,5 +72,17 @@ footer #bottom h2 {
 
 footer #bottom h2 span {
   font-weight: 300;
+}
+
+@media (max-width: 1300px) {
+  footer .informations {
+    bottom: 40%;
+  }
+}
+
+@media (max-width: 1100px) {
+  footer {
+    height: 40vh;
+  }
 }
 /*# sourceMappingURL=footer.component.css.map */

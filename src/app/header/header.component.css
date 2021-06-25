@@ -51,4 +51,14 @@ header nav a:hover {
 header nav a:active {
   opacity: 1;
 }
+
+@media (max-width: 1100px) {
+  header .wrapper {
+    width: 90%;
+  }
+  header nav a {
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+}
 /*# sourceMappingURL=header.component.css.map */

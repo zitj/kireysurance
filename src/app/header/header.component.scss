@@ -38,3 +38,16 @@ header {
     }
   }
 }
+@media (max-width: 1100px) {
+  header {
+    .wrapper {
+      width: 90%;
+    }
+    nav {
+      a {
+        font-size: 1em;
+        padding: 0.5em 1em;
+      }
+    }
+  }
+}
