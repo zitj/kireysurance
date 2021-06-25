@@ -1,0 +1,67 @@
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #d0e9f5;
+  height: 50vh;
+  padding: 3% 5%;
+}
+
+section .text {
+  margin-top: 10%;
+}
+
+section .text h1 {
+  font-size: 5em;
+  margin: 0;
+  color: #09519d;
+}
+
+section .text p {
+  font-size: 1.8em;
+  color: #407ccd;
+  margin: 0 0 10px;
+}
+
+section .text button {
+  background: #c95766;
+  color: white;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(11, 31, 73, 0.219);
+          box-shadow: 0px 4px 10px 0px rgba(11, 31, 73, 0.219);
+  border: none;
+  border-radius: 14px;
+  margin-top: .5em;
+  font-size: 1.7em;
+  font-weight: 300;
+  padding: .5em 1em;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+section .text button:hover {
+  opacity: .8;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(11, 31, 73, 0.288);
+          box-shadow: 0px 5px 15px 0px rgba(11, 31, 73, 0.288);
+}
+
+section .text button:active {
+  opacity: 1;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(11, 31, 73, 0.397);
+          box-shadow: 0px 0px 5px 0px rgba(11, 31, 73, 0.397);
+}
+
+section .illustration {
+  opacity: .9;
+}
+
+section svg {
+  position: absolute;
+  bottom: 0%;
+  z-index: -1;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=hero.component.css.map */
