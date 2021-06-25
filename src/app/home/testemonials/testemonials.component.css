@@ -1,0 +1,55 @@
+section {
+  height: 90vh;
+  margin-top: 20em;
+}
+
+section #ampersand {
+  color: #5db6dd;
+  font-weight: 900;
+  position: absolute;
+  font-size: 30em;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.1;
+}
+
+section #heading {
+  color: #09519d;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+}
+
+section .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 8% auto 0;
+  width: 80%;
+}
+
+section .cards .card {
+  width: 480px;
+  text-align: center;
+}
+
+section .cards .card img {
+  height: 200px;
+}
+
+section .cards .card h3 {
+  color: #09519d;
+  font-size: 2em;
+}
+
+section .cards .card p {
+  font-size: 1.5em;
+  color: #407bcd;
+  line-height: 45px;
+}
+/*# sourceMappingURL=testemonials.component.css.map */

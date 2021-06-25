@@ -1,0 +1,57 @@
+header {
+  background: #09519d;
+  color: white;
+}
+
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+}
+
+header .logo h1 {
+  text-transform: uppercase;
+}
+
+header .logo h1 span {
+  font-weight: 200;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 0.5em 2em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header nav a:visited {
+  color: white;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+  font-size: 1.4em;
+}
+
+header nav a:active {
+  opacity: 1;
+}
+/*# sourceMappingURL=header.component.css.map */

@@ -6,7 +6,7 @@ section {
       justify-content: space-around;
   background: #d0e9f5;
   height: 50vh;
-  padding: 3% 5%;
+  padding: 3% 10%;
 }
 
 section .text {
@@ -32,17 +32,17 @@ section .text button {
           box-shadow: 0px 4px 10px 0px rgba(11, 31, 73, 0.219);
   border: none;
   border-radius: 14px;
-  margin-top: .5em;
+  margin-top: 0.5em;
   font-size: 1.7em;
   font-weight: 300;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 section .text button:hover {
-  opacity: .8;
+  opacity: 0.8;
   -webkit-box-shadow: 0px 5px 15px 0px rgba(11, 31, 73, 0.288);
           box-shadow: 0px 5px 15px 0px rgba(11, 31, 73, 0.288);
 }
@@ -54,7 +54,7 @@ section .text button:active {
 }
 
 section .illustration {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 section svg {

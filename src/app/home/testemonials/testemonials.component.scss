@@ -1,0 +1,45 @@
+section {
+  height: 90vh;
+  margin-top: 20em;
+  #ampersand {
+    color: #5db6dd;
+    font-weight: 900;
+    position: absolute;
+    font-size: 30em;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.1;
+  }
+  #heading {
+    color: #09519d;
+    font-weight: 900;
+    font-size: 3em;
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 8% auto 0;
+    width: 80%;
+
+    .card {
+      width: 480px;
+      text-align: center;
+
+      img {
+        height: 200px;
+      }
+      h3 {
+        color: #09519d;
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.5em;
+        color: #407bcd;
+        line-height: 45px;
+      }
+    }
+  }
+}

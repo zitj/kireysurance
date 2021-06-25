@@ -1,14 +1,40 @@
-header{
-  background: navy;
+header {
+  background: #09519d;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  a{
-    text-decoration: none;
-    margin-right: 3em;
-    font-size: 3em;
-    &:visited{
-      color: white;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .logo {
+    h1 {
+      text-transform: uppercase;
+      span {
+        font-weight: 200;
+      }
+    }
+  }
+  nav {
+    display: flex;
+    width: 45%;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-size: 1.3em;
+      padding: 0.5em 2em;
+      transition: 0.2s;
+      &:visited {
+        color: white;
+      }
+      &:hover {
+        opacity: 0.8;
+        font-size: 1.4em;
+      }
+      &:active {
+        opacity: 1;
+      }
     }
   }
 }
