@@ -109,3 +109,55 @@ section {
     }
   }
 }
+@media (max-width: 1000px) {
+  section {
+    height: 40vh;
+    .text {
+      width: 60%;
+      margin-top: 15%;
+      h1 {
+        font-size: 2.8em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      button {
+        font-size: 1.2em;
+      }
+    }
+    .illustration {
+      transform: scale(0.55) translateX(-18em) translateY(-3.5em);
+    }
+    svg {
+      bottom: 40%;
+    }
+  }
+}
+@media (max-width: 700px) {
+  section {
+    position: relative;
+    height: 66vh;
+    .text {
+      width: 100%;
+      margin: 60% auto 0;
+      text-align: center;
+      h1 {
+        font-size: 2.8em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      button {
+        font-size: 1.2em;
+      }
+    }
+    .illustration {
+      position: absolute;
+      top: -13%;
+      left: 50%;
+    }
+    svg {
+      bottom: -10%;
+    }
+  }
+}

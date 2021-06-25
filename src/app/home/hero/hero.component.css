@@ -127,4 +127,59 @@ section svg {
     bottom: 50%;
   }
 }
+
+@media (max-width: 1000px) {
+  section {
+    height: 40vh;
+  }
+  section .text {
+    width: 60%;
+    margin-top: 15%;
+  }
+  section .text h1 {
+    font-size: 2.8em;
+  }
+  section .text p {
+    font-size: 1.1em;
+  }
+  section .text button {
+    font-size: 1.2em;
+  }
+  section .illustration {
+    -webkit-transform: scale(0.55) translateX(-18em) translateY(-3.5em);
+            transform: scale(0.55) translateX(-18em) translateY(-3.5em);
+  }
+  section svg {
+    bottom: 40%;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    position: relative;
+    height: 66vh;
+  }
+  section .text {
+    width: 100%;
+    margin: 60% auto 0;
+    text-align: center;
+  }
+  section .text h1 {
+    font-size: 2.8em;
+  }
+  section .text p {
+    font-size: 1.1em;
+  }
+  section .text button {
+    font-size: 1.2em;
+  }
+  section .illustration {
+    position: absolute;
+    top: -13%;
+    left: 50%;
+  }
+  section svg {
+    bottom: -10%;
+  }
+}
 /*# sourceMappingURL=hero.component.css.map */
