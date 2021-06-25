@@ -146,8 +146,8 @@ section svg {
     font-size: 1.2em;
   }
   section .illustration {
-    -webkit-transform: scale(0.55) translateX(-18em) translateY(-3.5em);
-            transform: scale(0.55) translateX(-18em) translateY(-3.5em);
+    -webkit-transform: scale(0.5) translateX(-18em) translateY(-3.5em);
+            transform: scale(0.5) translateX(-18em) translateY(-3.5em);
   }
   section svg {
     bottom: 40%;
@@ -180,6 +180,15 @@ section svg {
   }
   section svg {
     bottom: -10%;
+  }
+}
+
+@media (max-width: 500px) {
+  section {
+    height: 70vh;
+  }
+  section .text {
+    margin: 75% auto 0;
   }
 }
 /*# sourceMappingURL=hero.component.css.map */

@@ -121,3 +121,20 @@ section {
     }
   }
 }
+@media (max-width: 500px) {
+  section {
+    .text {
+      width: 80%;
+      left: 10%;
+      p {
+        font-size: 1em;
+        line-height: 35px;
+      }
+    }
+    .illustration {
+      img {
+        transform: scale(0.3) translateX(95em) translateY(-15em);
+      }
+    }
+  }
+}

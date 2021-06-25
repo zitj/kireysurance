@@ -130,4 +130,19 @@ section .illustration img {
             transform: scale(0.4) translateX(65em) translateY(-12em);
   }
 }
+
+@media (max-width: 500px) {
+  section .text {
+    width: 80%;
+    left: 10%;
+  }
+  section .text p {
+    font-size: 1em;
+    line-height: 35px;
+  }
+  section .illustration img {
+    -webkit-transform: scale(0.3) translateX(95em) translateY(-15em);
+            transform: scale(0.3) translateX(95em) translateY(-15em);
+  }
+}
 /*# sourceMappingURL=about.component.css.map */

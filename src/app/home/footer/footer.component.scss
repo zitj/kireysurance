@@ -116,7 +116,28 @@ footer {
       }
     }
     svg {
-      top: -19%;
+      top: -18%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    .informations {
+      bottom: 54%;
+      .information {
+        height: 160px;
+        h4 {
+          font-size: 2em;
+        }
+        .socialMedia {
+          img {
+            height: 40px;
+          }
+        }
+      }
+    }
+    svg {
+      top: -16%;
     }
   }
 }

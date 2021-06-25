@@ -126,3 +126,11 @@ section {
     }
   }
 }
+@media (max-width: 500px) {
+  section {
+    height: 115vh;
+    #ampersand {
+      top: 132%;
+    }
+  }
+}

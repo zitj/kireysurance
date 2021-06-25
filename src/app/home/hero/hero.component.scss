@@ -126,7 +126,7 @@ section {
       }
     }
     .illustration {
-      transform: scale(0.55) translateX(-18em) translateY(-3.5em);
+      transform: scale(0.5) translateX(-18em) translateY(-3.5em);
     }
     svg {
       bottom: 40%;
@@ -158,6 +158,14 @@ section {
     }
     svg {
       bottom: -10%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  section {
+    height: 70vh;
+    .text {
+      margin: 75% auto 0;
     }
   }
 }
