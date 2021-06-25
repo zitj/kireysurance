@@ -9,9 +9,10 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { HeroComponent } from './home/hero/hero.component';
 import { TestemonialsComponent } from './home/testemonials/testemonials.component';
 import { AboutComponent } from './home/about/about.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, HeroComponent, TestemonialsComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, HeroComponent, TestemonialsComponent, AboutComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, ToolbarModule],
   providers: [],
   bootstrap: [AppComponent],
