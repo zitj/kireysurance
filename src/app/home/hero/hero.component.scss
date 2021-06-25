@@ -205,3 +205,20 @@ section {
     }
   }
 }
+@media (max-width: 320px) {
+  section {
+    .text {
+      width: 95%;
+      margin: 75% 2.5% 0;
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+    }
+    .illustration {
+      transform: scale(0.35) translateX(-19em) translateY(-22.5em);
+    }
+  }
+}

@@ -170,3 +170,11 @@ footer {
     }
   }
 }
+@media (max-width: 320px) {
+  footer {
+    height: 110vh;
+    svg {
+      top: -10%;
+    }
+  }
+}

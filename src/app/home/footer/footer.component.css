@@ -181,4 +181,13 @@ footer #bottom h2 span {
     bottom: 56%;
   }
 }
+
+@media (max-width: 320px) {
+  footer {
+    height: 110vh;
+  }
+  footer svg {
+    top: -10%;
+  }
+}
 /*# sourceMappingURL=footer.component.css.map */

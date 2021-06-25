@@ -155,3 +155,16 @@ section {
     }
   }
 }
+@media (max-width: 320px) {
+  section {
+    height: 180vh;
+    #ampersand {
+      top: 165%;
+    }
+    .cards {
+      .card {
+        width: 200px;
+      }
+    }
+  }
+}

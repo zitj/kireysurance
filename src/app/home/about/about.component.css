@@ -169,4 +169,21 @@ section .illustration img {
             transform: scale(0.3) translateX(104em) translateY(-18em);
   }
 }
+
+@media (max-width: 320px) {
+  section {
+    height: 130vh;
+  }
+  section .text {
+    width: 100%;
+    left: 0%;
+  }
+  section .text p {
+    line-height: 28px;
+  }
+  section .illustration img {
+    -webkit-transform: scale(0.27) translateX(120em) translateY(-26em);
+            transform: scale(0.27) translateX(120em) translateY(-26em);
+  }
+}
 /*# sourceMappingURL=about.component.css.map */

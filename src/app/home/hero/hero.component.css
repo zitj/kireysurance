@@ -229,4 +229,21 @@ section svg {
             transform: scale(0.4) translateX(-19em) translateY(-11.5em);
   }
 }
+
+@media (max-width: 320px) {
+  section .text {
+    width: 95%;
+    margin: 75% 2.5% 0;
+  }
+  section .text h1 {
+    font-size: 2em;
+  }
+  section .text p {
+    font-size: 0.8em;
+  }
+  section .illustration {
+    -webkit-transform: scale(0.35) translateX(-19em) translateY(-22.5em);
+            transform: scale(0.35) translateX(-19em) translateY(-22.5em);
+  }
+}
 /*# sourceMappingURL=hero.component.css.map */

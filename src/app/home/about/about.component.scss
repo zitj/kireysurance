@@ -162,3 +162,20 @@ section {
     }
   }
 }
+@media (max-width: 320px) {
+  section {
+    height: 130vh;
+    .text {
+      width: 100%;
+      left: 0%;
+      p {
+        line-height: 28px;
+      }
+    }
+    .illustration {
+      img {
+        transform: scale(0.27) translateX(120em) translateY(-26em);
+      }
+    }
+  }
+}

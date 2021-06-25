@@ -165,4 +165,16 @@ section .cards .card p {
     font-size: 1.6em;
   }
 }
+
+@media (max-width: 320px) {
+  section {
+    height: 180vh;
+  }
+  section #ampersand {
+    top: 165%;
+  }
+  section .cards .card {
+    width: 200px;
+  }
+}
 /*# sourceMappingURL=testemonials.component.css.map */
