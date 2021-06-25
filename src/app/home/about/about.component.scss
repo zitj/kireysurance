@@ -1,0 +1,30 @@
+section {
+  position: relative;
+  padding: 5%;
+  width: 80%;
+  margin: 0 auto;
+  .text {
+    position: absolute;
+    left: 7%;
+    z-index: 2;
+    width: 40%;
+    h2 {
+      font-size: 5.5em;
+      margin-bottom: 0.4em;
+      color: #09519d;
+    }
+    p {
+      font-size: 2em;
+      color: #407bcd;
+    }
+  }
+  .illustration {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    img {
+      transform: scale(0.9);
+      opacity: 0.35;
+    }
+  }
+}

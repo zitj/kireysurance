@@ -1,5 +1,5 @@
 section {
-  height: 90vh;
+  height: 80vh;
   margin-top: 20em;
 }
 
@@ -29,7 +29,7 @@ section .cards {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 8% auto 0;
+  margin: 5% auto 0;
   width: 80%;
 }
 
