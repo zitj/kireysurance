@@ -144,4 +144,25 @@ section .cards .card p {
     top: 132%;
   }
 }
+
+@media (max-width: 420px) {
+  section {
+    height: 140vh;
+  }
+  section #ampersand {
+    top: 145%;
+  }
+  section #heading {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 390px) {
+  section #ampersand {
+    top: 150%;
+  }
+  section #heading {
+    font-size: 1.6em;
+  }
+}
 /*# sourceMappingURL=testemonials.component.css.map */

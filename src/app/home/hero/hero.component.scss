@@ -169,3 +169,39 @@ section {
     }
   }
 }
+@media (max-width: 420px) {
+  section {
+    height: 75vh;
+    .text {
+      width: 90%;
+      margin: 80% 5% 0;
+      h1 {
+        font-size: 2.4em;
+      }
+      p {
+        font-size: 1em;
+        margin-bottom: 5px;
+      }
+    }
+    .illustration {
+      transform: scale(0.4) translateX(-19em) translateY(-8.5em);
+    }
+  }
+}
+@media (max-width: 390px) {
+  section {
+    .text {
+      width: 90%;
+      margin: 80% 5% 0;
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+    }
+    .illustration {
+      transform: scale(0.4) translateX(-19em) translateY(-11.5em);
+    }
+  }
+}

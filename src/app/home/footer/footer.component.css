@@ -154,4 +154,31 @@ footer #bottom h2 span {
     top: -16%;
   }
 }
+
+@media (max-width: 420px) {
+  footer {
+    height: 90vh;
+  }
+  footer .informations {
+    bottom: 54%;
+  }
+  footer .informations .information {
+    height: 180px;
+  }
+  footer .informations .information h4 {
+    font-size: 2em;
+  }
+  footer .informations .information .socialMedia img {
+    height: 40px;
+  }
+  footer svg {
+    top: -12%;
+  }
+}
+
+@media (max-width: 390px) {
+  footer .informations {
+    bottom: 56%;
+  }
+}
 /*# sourceMappingURL=footer.component.css.map */

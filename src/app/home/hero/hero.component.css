@@ -191,4 +191,42 @@ section svg {
     margin: 75% auto 0;
   }
 }
+
+@media (max-width: 420px) {
+  section {
+    height: 75vh;
+  }
+  section .text {
+    width: 90%;
+    margin: 80% 5% 0;
+  }
+  section .text h1 {
+    font-size: 2.4em;
+  }
+  section .text p {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  section .illustration {
+    -webkit-transform: scale(0.4) translateX(-19em) translateY(-8.5em);
+            transform: scale(0.4) translateX(-19em) translateY(-8.5em);
+  }
+}
+
+@media (max-width: 390px) {
+  section .text {
+    width: 90%;
+    margin: 80% 5% 0;
+  }
+  section .text h1 {
+    font-size: 2em;
+  }
+  section .text p {
+    font-size: 0.8em;
+  }
+  section .illustration {
+    -webkit-transform: scale(0.4) translateX(-19em) translateY(-11.5em);
+            transform: scale(0.4) translateX(-19em) translateY(-11.5em);
+  }
+}
 /*# sourceMappingURL=hero.component.css.map */

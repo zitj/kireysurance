@@ -141,3 +141,32 @@ footer {
     }
   }
 }
+@media (max-width: 420px) {
+  footer {
+    height: 90vh;
+    .informations {
+      bottom: 54%;
+      .information {
+        height: 180px;
+        h4 {
+          font-size: 2em;
+        }
+        .socialMedia {
+          img {
+            height: 40px;
+          }
+        }
+      }
+    }
+    svg {
+      top: -12%;
+    }
+  }
+}
+@media (max-width: 390px) {
+  footer {
+    .informations {
+      bottom: 56%;
+    }
+  }
+}

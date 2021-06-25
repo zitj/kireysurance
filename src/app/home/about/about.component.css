@@ -145,4 +145,28 @@ section .illustration img {
             transform: scale(0.3) translateX(95em) translateY(-15em);
   }
 }
+
+@media (max-width: 420px) {
+  section {
+    height: 110vh;
+  }
+  section .text {
+    width: 90%;
+    left: 5%;
+  }
+  section .illustration img {
+    -webkit-transform: scale(0.3) translateX(102em) translateY(-15em);
+            transform: scale(0.3) translateX(102em) translateY(-15em);
+  }
+}
+
+@media (max-width: 390px) {
+  section {
+    height: 120vh;
+  }
+  section .illustration img {
+    -webkit-transform: scale(0.3) translateX(104em) translateY(-18em);
+            transform: scale(0.3) translateX(104em) translateY(-18em);
+  }
+}
 /*# sourceMappingURL=about.component.css.map */

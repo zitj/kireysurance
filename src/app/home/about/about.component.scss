@@ -138,3 +138,27 @@ section {
     }
   }
 }
+@media (max-width: 420px) {
+  section {
+    height: 110vh;
+    .text {
+      width: 90%;
+      left: 5%;
+    }
+    .illustration {
+      img {
+        transform: scale(0.3) translateX(102em) translateY(-15em);
+      }
+    }
+  }
+}
+@media (max-width: 390px) {
+  section {
+    height: 120vh;
+    .illustration {
+      img {
+        transform: scale(0.3) translateX(104em) translateY(-18em);
+      }
+    }
+  }
+}

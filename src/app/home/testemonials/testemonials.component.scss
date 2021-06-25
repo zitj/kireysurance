@@ -134,3 +134,24 @@ section {
     }
   }
 }
+@media (max-width: 420px) {
+  section {
+    height: 140vh;
+    #ampersand {
+      top: 145%;
+    }
+    #heading {
+      font-size: 1.8em;
+    }
+  }
+}
+@media (max-width: 390px) {
+  section {
+    #ampersand {
+      top: 150%;
+    }
+    #heading {
+      font-size: 1.6em;
+    }
+  }
+}
