@@ -4,16 +4,23 @@
       <h1>kirey<span>surance</span></h1>
     </div>
 
-    <nav>
-      <a routerLink="" routerLinkActive="active">Home</a>
-      <a routerLink="/client" routerLinkActive="active">Client</a>
+    <nav *ngIf="showNav">
+      <a routerLink="" routerLinkActive="active" (click)="toggleNavigation()"
+        >Home</a
+      >
+      <a
+        routerLink="/client"
+        routerLinkActive="active"
+        (click)="toggleNavigation()"
+        >Client</a
+      >
       <a href="#about">About</a>
       <a href="#footer">Contact</a>
     </nav>
-    <div id="hamburger">
-      <span class=""></span>
-      <span class=""></span>
-      <span class=""></span>
+    <div id="hamburger" (click)="toggleNavigation()">
+      <span [ngClass]="{ active: showNav }"></span>
+      <span [ngClass]="{ active: showNav }"></span>
+      <span [ngClass]="{ active: showNav }"></span>
     </div>
   </div>
   <!-- end .wrapper -->

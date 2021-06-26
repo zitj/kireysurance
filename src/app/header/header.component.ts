@@ -8,5 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  showNav: boolean = true;
+
+  ngOnInit(): void {
+    if (screen.width <= 700) {
+      this.showNav = false;
+    }
+  }
+
+  toggleNavigation(): void {
+    this.showNav ? (this.showNav = false) : (this.showNav = true);
+  }
 }
