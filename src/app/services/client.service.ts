@@ -15,4 +15,8 @@ export class ClientService {
   getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.url + 'clients');
   }
+
+  deleteClient(id: number): Observable<Client[]> {
+    return this.http.delete<Client[]>(this.url + 'clients' + `/${id}`);
+  }
 }

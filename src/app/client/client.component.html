@@ -1,7 +1,12 @@
 <section>
   <h1>{{ name }}</h1>
 
-  <p-table [value]="clients">
+  <p-table
+    [value]="clients"
+    selectionMode="single"
+    [(selection)]="selectedClient"
+    dataKey="code"
+  >
     <ng-template pTemplate="header">
       <tr>
         <th>Code</th>
@@ -13,15 +18,36 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-client>
-      <tr>
+      <tr (click)="setClientId($event)">
         <td>{{ client.code }}</td>
         <td>{{ client.name }}</td>
         <td>{{ client.duration }}</td>
         <td>{{ client.numberOfAccounts }}</td>
         <td>{{ client.dateOfCreation }}</td>
-        <td><button>Edit</button><button>Delete</button></td>
+        <td>
+          <button type="button" pButton (click)="showDialog()">Edit</button
+          ><button type="button" pButton (click)="toggleDeleteDialog()">
+            Delete
+          </button>
+        </td>
       </tr>
     </ng-template>
   </p-table>
-  <button type="button" pButton label="primeNG">Add client</button>
+  <p-dialog
+    header="Add client"
+    [modal]="displayDialog"
+    [(visible)]="displayDialog"
+  >
+    <h1>{{ name }}</h1>
+  </p-dialog>
+  <p-dialog
+    header="Add client"
+    [modal]="displayDeleteDialog"
+    [(visible)]="displayDeleteDialog"
+  >
+    <h1>Do you want to delete this client?</h1>
+    <button type="button" pButton (click)="deleteClient()">Delete</button>
+    <button>Cancel</button>
+  </p-dialog>
+  <button type="button" pButton (click)="showDialog()">Add client</button>
 </section>

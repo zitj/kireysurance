@@ -13,8 +13,28 @@ export class ClientComponent implements OnInit, OnDestroy {
 
   name = 'Clients table';
 
-  public getSub: Subscription = new Subscription();
+  private getSub: Subscription = new Subscription();
+  private delSub: Subscription = new Subscription();
+
   clients: Client[] = [];
+  selectedClient: Client = this.clients[0];
+  displayDialog: boolean = false;
+  displayDeleteDialog: boolean = false;
+  clientCode: string = '';
+  clientId: number = 9999;
+
+  toggleDeleteDialog() {
+    this.displayDeleteDialog
+      ? (this.displayDeleteDialog = false)
+      : (this.displayDeleteDialog = true);
+  }
+
+  showDialog() {
+    this.displayDialog = true;
+  }
+  showDeleteDialog() {
+    this.displayDeleteDialog = true;
+  }
 
   ngOnInit(): void {
     this.getSub = this.clientService.getClients().subscribe((data) => {
@@ -26,5 +46,33 @@ export class ClientComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.getSub.unsubscribe();
+  }
+
+  proba(event: any): void {
+    console.log(event.target);
+  }
+
+  setClientId(event: any): void {
+    this.clientCode = event.currentTarget.children[0].innerText;
+    for (let client of this.clients) {
+      if (client.code === this.clientCode) {
+        this.clientId = client.id;
+      }
+    }
+  }
+
+  deleteClient(): void {
+    this.toggleDeleteDialog();
+    this.delSub = this.clientService
+      .deleteClient(this.clientId)
+      .subscribe((data) => {
+        this.getSub = this.clientService.getClients().subscribe((data) => {
+          this.clients = data;
+          for (let client of this.clients) {
+            console.log(client);
+          }
+        });
+      });
+    // this.displayDeleteDialog = false;
   }
 }

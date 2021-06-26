@@ -14,6 +14,8 @@ import { ClientModule } from './client/client.module';
 import { ClientComponent } from './client/client.component';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ClientComponent,
   ],
-  exports: [TableModule],
+  exports: [TableModule, DialogModule],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ClientModule,
     HttpClientModule,
     TableModule,
+    DialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
