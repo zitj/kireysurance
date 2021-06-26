@@ -159,20 +159,31 @@ footer {
       }
     }
     svg {
-      top: -12%;
+      top: -11%;
     }
   }
 }
 @media (max-width: 390px) {
   footer {
+    height: 100vh;
     .informations {
       bottom: 56%;
+    }
+    svg {
+      top: -10%;
     }
   }
 }
 @media (max-width: 320px) {
   footer {
     height: 110vh;
+    .informations {
+      .information {
+        .socialMedia {
+          width: 50%;
+        }
+      }
+    }
     svg {
       top: -10%;
     }

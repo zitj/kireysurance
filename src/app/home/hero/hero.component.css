@@ -231,6 +231,9 @@ section svg {
 }
 
 @media (max-width: 320px) {
+  section {
+    height: 80vh;
+  }
   section .text {
     width: 95%;
     margin: 75% 2.5% 0;

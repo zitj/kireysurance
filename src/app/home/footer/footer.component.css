@@ -172,19 +172,28 @@ footer #bottom h2 span {
     height: 40px;
   }
   footer svg {
-    top: -12%;
+    top: -11%;
   }
 }
 
 @media (max-width: 390px) {
+  footer {
+    height: 100vh;
+  }
   footer .informations {
     bottom: 56%;
+  }
+  footer svg {
+    top: -10%;
   }
 }
 
 @media (max-width: 320px) {
   footer {
     height: 110vh;
+  }
+  footer .informations .information .socialMedia {
+    width: 50%;
   }
   footer svg {
     top: -10%;

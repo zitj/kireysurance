@@ -102,17 +102,46 @@ header {
       background: #09519d;
       position: absolute;
       right: 0%;
-      top: 9.5%;
+      top: 8.5%;
       height: 300px;
       padding: 2% 1.5%;
       flex-direction: column;
       z-index: 25;
       border-radius: 0px 0px 0px 20px;
-      box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.424);
-      display: none;
+      box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.281);
+      // display: none;
       a {
         border-bottom: 1px solid rgba(255, 255, 255, 0.192);
       }
+    }
+  }
+}
+@media (max-width: 420px) {
+  header {
+    height: 80px;
+    nav {
+      top: 9.7%;
+    }
+    .logo {
+      h1 {
+        font-size: 1.5em;
+        line-height: 50px;
+      }
+    }
+  }
+}
+@media (max-width: 390px) {
+  header {
+    nav {
+      top: 11%;
+      padding: 2% 3%;
+    }
+  }
+}
+@media (max-width: 320px) {
+  header {
+    nav {
+      top: 12.7%;
     }
   }
 }
