@@ -16,6 +16,8 @@ import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     ClientComponent,
   ],
-  exports: [TableModule, DialogModule],
+  exports: [TableModule, DialogModule, InputNumberModule],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +40,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableModule,
     DialogModule,
     BrowserAnimationsModule,
+    InputNumberModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

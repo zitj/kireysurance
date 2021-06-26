@@ -1,12 +1,7 @@
 <section>
   <h1>{{ name }}</h1>
 
-  <p-table
-    [value]="clients"
-    selectionMode="single"
-    [(selection)]="selectedClient"
-    dataKey="code"
-  >
+  <p-table [value]="clients">
     <ng-template pTemplate="header">
       <tr>
         <th>Code</th>
@@ -25,7 +20,8 @@
         <td>{{ client.numberOfAccounts }}</td>
         <td>{{ client.dateOfCreation }}</td>
         <td>
-          <button type="button" pButton (click)="showDialog()">Edit</button
+          <button type="button" pButton (click)="toggleCreateEditDialog()">
+            Edit</button
           ><button type="button" pButton (click)="toggleDeleteDialog()">
             Delete
           </button>
@@ -34,11 +30,30 @@
     </ng-template>
   </p-table>
   <p-dialog
-    header="Add client"
+    header="Add new client"
     [modal]="displayDialog"
     [(visible)]="displayDialog"
   >
-    <h1>{{ name }}</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="addNewClient()">
+      <div class="inputHolder">
+        <label for="code">Code</label>
+        <input formControlName="code" type="text" />
+      </div>
+      <div class="inputHolder">
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" />
+      </div>
+      <div class="inputHolder">
+        <label for="duration">Duration</label>
+        <input formControlName="duration" type="number" />
+      </div>
+      <div class="inputHolder">
+        <label for="numberOfAccounts">Number of accounts</label>
+        <input formControlName="numberOfAccounts" type="number" />
+      </div>
+
+      <button type="submit">Add new client</button>
+    </form>
   </p-dialog>
   <p-dialog
     header="Add client"
@@ -49,5 +64,7 @@
     <button type="button" pButton (click)="deleteClient()">Delete</button>
     <button>Cancel</button>
   </p-dialog>
-  <button type="button" pButton (click)="showDialog()">Add client</button>
+  <button type="button" pButton (click)="toggleCreateEditDialog()">
+    Add client
+  </button>
 </section>

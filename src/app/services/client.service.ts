@@ -19,4 +19,8 @@ export class ClientService {
   deleteClient(id: number): Observable<Client[]> {
     return this.http.delete<Client[]>(this.url + 'clients' + `/${id}`);
   }
+
+  createClient(arg: Client): Observable<Client[]> {
+    return this.http.post<Client[]>(this.url + 'clients', arg);
+  }
 }
