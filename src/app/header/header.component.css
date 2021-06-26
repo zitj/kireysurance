@@ -134,6 +134,16 @@ header #hamburger span.active {
     border-radius: 0px 0px 0px 20px;
     -webkit-box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.281);
             box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.281);
+    -webkit-transform: rotateZ(-18deg) rotateY(90deg);
+            transform: rotateZ(-18deg) rotateY(90deg);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+  }
+  header nav.active {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg) rotateY(0deg);
+            transform: rotateZ(0deg) rotateY(0deg);
   }
   header nav a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.192);

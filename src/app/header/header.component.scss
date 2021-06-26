@@ -109,7 +109,15 @@ header {
       z-index: 25;
       border-radius: 0px 0px 0px 20px;
       box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.281);
-      // display: none;
+      transform: rotateZ(-18deg) rotateY(90deg);
+      // transform: translateY(-500px);
+      transition: 0.2s ease-in-out;
+      opacity: 0;
+      &.active {
+        opacity: 1;
+        transform: rotateZ(0deg) rotateY(0deg);
+        // transform: translateY(0px);
+      }
       a {
         border-bottom: 1px solid rgba(255, 255, 255, 0.192);
       }
