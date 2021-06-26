@@ -10,10 +10,31 @@ import { HeroComponent } from './home/hero/hero.component';
 import { TestemonialsComponent } from './home/testemonials/testemonials.component';
 import { AboutComponent } from './home/about/about.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { ClientModule } from './client/client.module';
+import { ClientComponent } from './client/client.component';
+import { TableModule } from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, HeroComponent, TestemonialsComponent, AboutComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, ToolbarModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    HeroComponent,
+    TestemonialsComponent,
+    AboutComponent,
+    FooterComponent,
+    ClientComponent,
+  ],
+  exports: [TableModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ToolbarModule,
+    ClientModule,
+    HttpClientModule,
+    TableModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

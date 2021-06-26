@@ -1,1 +1,27 @@
-<h1>client works!</h1>
+<section>
+  <h1>{{ name }}</h1>
+
+  <p-table [value]="clients">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Number of accounts</th>
+        <th>Date of creation</th>
+        <th>Edit or delete</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-client>
+      <tr>
+        <td>{{ client.code }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{ client.duration }}</td>
+        <td>{{ client.numberOfAccounts }}</td>
+        <td>{{ client.dateOfCreation }}</td>
+        <td><button>Edit</button><button>Delete</button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <button type="button" pButton label="primeNG">Add client</button>
+</section>

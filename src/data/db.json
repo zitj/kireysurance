@@ -1,0 +1,12 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "code": "qweqwe",
+      "name": "Aleksandar",
+      "duration": 5,
+      "numberOfAccounts": 3,
+      "dateOfCreation": "26-6-2021"
+    }
+  ]
+}
