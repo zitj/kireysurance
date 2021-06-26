@@ -16,36 +16,41 @@ export class ClientComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder
   ) {}
 
-  name = 'Clients table';
+  heading: string = '';
+  header: string = 'Add client';
   date = new Date(Date.now());
+  edit: boolean = false;
+  clients: Client[] = [];
 
   private getSub: Subscription = new Subscription();
   private postSub: Subscription = new Subscription();
   private delSub: Subscription = new Subscription();
+  private updateSub: Subscription = new Subscription();
+
   formGroup: FormGroup = new FormGroup({});
 
-  clients: Client[] = [];
-
   displayDialog: boolean = false;
-  displayDeleteDialog: boolean = false;
   clientCode: string = '';
   clientId: number = 9999;
 
-  toggleDeleteDialog() {
-    this.displayDeleteDialog
-      ? (this.displayDeleteDialog = false)
-      : (this.displayDeleteDialog = true);
-  }
-
-  toggleCreateEditDialog() {
+  toggleDialog() {
     this.displayDialog
       ? (this.displayDialog = false)
       : (this.displayDialog = true);
+    setTimeout(() => {
+      if (this.edit) {
+        this.header = 'Edit client';
+      } else {
+        this.header = 'Add client';
+      }
+    }, 0);
   }
 
   buildingForm(): void {
+    let randomString = Math.random().toString(36).substring(7).toUpperCase();
+
     this.formGroup = this.formBuilder.group({
-      code: ['', [Validators.required]],
+      code: [randomString],
       name: ['', [Validators.required]],
       duration: ['', [Validators.required]],
       numberOfAccounts: ['', [Validators.required]],
@@ -53,49 +58,84 @@ export class ClientComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
-    this.buildingForm();
+  getClients(): void {
     this.getSub = this.clientService.getClients().subscribe((data) => {
-      this.clients = data;
-      for (let client of this.clients) {
-        console.log(client);
+      this.clients = data.reverse();
+      if (this.clients.length === 0) {
+        this.heading = 'Currently there are no clients';
+      } else {
+        this.heading = 'Table of clients';
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.buildingForm();
+    this.getClients();
   }
   ngOnDestroy(): void {
     this.getSub.unsubscribe();
     this.delSub.unsubscribe();
+    this.postSub.unsubscribe();
   }
 
   setClientId(event: any): void {
-    this.clientCode = event.currentTarget.children[0].innerText;
-    for (let client of this.clients) {
-      if (client.code === this.clientCode) {
-        this.clientId = client.id;
-      }
-    }
+    this.clientId = +event.currentTarget.id;
   }
 
   deleteClient(): void {
-    this.toggleDeleteDialog();
-    this.delSub = this.clientService
-      .deleteClient(this.clientId)
-      .subscribe((data) => {
-        this.getSub = this.clientService.getClients().subscribe((data) => {
-          this.clients = data;
-        });
-      });
+    setTimeout(() => {
+      for (let client of this.clients) {
+        if (client.id === this.clientId) {
+          this.delSub = this.clientService
+            .deleteClient(this.clientId)
+            .subscribe((data) => {
+              this.getClients();
+            });
+        }
+      }
+    }, 0);
   }
 
   addNewClient(): void {
-    this.toggleCreateEditDialog();
+    this.toggleDialog();
     this.postSub = this.clientService
       .createClient(this.formGroup.value)
       .subscribe((data) => {
-        this.getSub = this.clientService.getClients().subscribe((data) => {
-          this.clients = data;
-        });
+        this.getClients();
       });
+  }
+
+  openCreateDialog(): void {
+    this.edit = false;
+    this.toggleDialog();
     this.buildingForm();
+  }
+
+  openEditDialog(): void {
+    this.toggleDialog();
+    this.edit = true;
+    setTimeout(() => {
+      for (let client of this.clients) {
+        if (client.id === this.clientId) {
+          this.formGroup = this.formBuilder.group({
+            code: [client.code],
+            name: [client.name, [Validators.required]],
+            duration: [client.duration, [Validators.required]],
+            numberOfAccounts: [client.numberOfAccounts, [Validators.required]],
+            dateOfCreation: this.date.toLocaleDateString(),
+          });
+        }
+      }
+    }, 0);
+  }
+
+  editClient(): void {
+    this.toggleDialog();
+    this.updateSub = this.clientService
+      .updateClient(this.clientId, this.formGroup.value)
+      .subscribe((data) => {
+        this.getClients();
+      });
   }
 }

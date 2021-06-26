@@ -1,36 +1,12 @@
 {
   "clients": [
     {
-      "code": "oesda",
-      "name": "Ivan",
-      "duration": 212,
-      "numberOfAccounts": 2,
-      "dateOfCreation": "6/26/2021",
-      "id": 2
-    },
-    {
-      "code": "dsasda",
-      "name": "dsdad",
-      "duration": 22,
-      "numberOfAccounts": 22,
-      "dateOfCreation": "6/26/2021",
-      "id": 3
-    },
-    {
-      "code": "SAD",
-      "name": "MAD",
-      "duration": 2309,
-      "numberOfAccounts": 90,
-      "dateOfCreation": "6/26/2021",
-      "id": 4
-    },
-    {
-      "code": "Glad",
-      "name": "EKV",
-      "duration": 12,
+      "code": "X5MVC8",
+      "name": "Dino Dvornik",
+      "duration": 32,
       "numberOfAccounts": 32,
       "dateOfCreation": "6/26/2021",
-      "id": 5
+      "id": 1
     }
   ]
 }

@@ -1,7 +1,7 @@
 <section>
-  <h1>{{ name }}</h1>
+  <h1>{{ heading }}</h1>
 
-  <p-table [value]="clients">
+  <p-table [value]="clients" *ngIf="this.clients.length > 0">
     <ng-template pTemplate="header">
       <tr>
         <th>Code</th>
@@ -13,16 +13,15 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-client>
-      <tr (click)="setClientId($event)">
+      <tr (click)="setClientId($event)" [id]="client.id">
         <td>{{ client.code }}</td>
         <td>{{ client.name }}</td>
         <td>{{ client.duration }}</td>
         <td>{{ client.numberOfAccounts }}</td>
         <td>{{ client.dateOfCreation }}</td>
         <td>
-          <button type="button" pButton (click)="toggleCreateEditDialog()">
-            Edit</button
-          ><button type="button" pButton (click)="toggleDeleteDialog()">
+          <button type="button" pButton (click)="openEditDialog()">Edit</button
+          ><button type="button" pButton (click)="deleteClient()">
             Delete
           </button>
         </td>
@@ -30,15 +29,14 @@
     </ng-template>
   </p-table>
   <p-dialog
-    header="Add new client"
+    [header]="header"
     [modal]="displayDialog"
     [(visible)]="displayDialog"
   >
-    <form [formGroup]="formGroup" (ngSubmit)="addNewClient()">
-      <div class="inputHolder">
-        <label for="code">Code</label>
-        <input formControlName="code" type="text" />
-      </div>
+    <form
+      [formGroup]="formGroup"
+      (ngSubmit)="!edit ? addNewClient() : editClient()"
+    >
       <div class="inputHolder">
         <label for="name">Name</label>
         <input formControlName="name" type="text" />
@@ -52,19 +50,9 @@
         <input formControlName="numberOfAccounts" type="number" />
       </div>
 
-      <button type="submit">Add new client</button>
+      <button type="submit">{{ header }}</button>
     </form>
   </p-dialog>
-  <p-dialog
-    header="Add client"
-    [modal]="displayDeleteDialog"
-    [(visible)]="displayDeleteDialog"
-  >
-    <h1>Do you want to delete this client?</h1>
-    <button type="button" pButton (click)="deleteClient()">Delete</button>
-    <button>Cancel</button>
-  </p-dialog>
-  <button type="button" pButton (click)="toggleCreateEditDialog()">
-    Add client
-  </button>
+
+  <button type="button" pButton (click)="openCreateDialog()">Add client</button>
 </section>
