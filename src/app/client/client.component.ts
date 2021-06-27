@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ClientService } from '../services/client.service';
-import { Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Client } from '../models/Client';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-client',
@@ -16,10 +17,7 @@ export class ClientComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder
   ) {}
 
-  private getSub: Subscription = new Subscription();
-  private postSub: Subscription = new Subscription();
-  private delSub: Subscription = new Subscription();
-  private updateSub: Subscription = new Subscription();
+  public unsubscribe$ = new Subject();
 
   formGroup: FormGroup = new FormGroup({});
 
@@ -28,14 +26,13 @@ export class ClientComponent implements OnInit, OnDestroy {
   validName: boolean = false;
   edit: boolean = false;
 
-  heading: string = '';
+  heading: string = 'There are no clients';
   header: string = 'Add client';
 
   date = new Date(Date.now());
   clients: Client[] = [];
 
   displayDialog: boolean = false;
-  clientCode: string = '';
   clientId: number = 9999;
 
   toggleDialog() {
@@ -70,42 +67,69 @@ export class ClientComponent implements OnInit, OnDestroy {
     this.clientId = +event.currentTarget.id;
   }
 
+  // HTTPS
   getClients(): void {
-    this.getSub = this.clientService.getClients().subscribe((data) => {
-      this.clients = data.reverse();
-      if (this.clients.length === 0) {
-        this.heading = 'There are no clients';
-      } else {
-        this.heading = 'Table of clients';
-      }
-    });
+    this.clientService
+      .getClients()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (res) => {
+          this.clients = res.reverse();
+          if (this.clients.length === 0) {
+            this.heading = 'There are no clients';
+          } else {
+            this.heading = 'Table of clients';
+          }
+        },
+        (err) => {
+          console.log(err.message);
+        }
+      );
   }
 
   postClient(): void {
-    this.postSub = this.clientService
+    this.clientService
       .createClient(this.formGroup.value)
-      .subscribe((data) => {
-        this.getClients();
-      });
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (res) => {
+          this.getClients();
+        },
+        (err) => {
+          console.log(err.message);
+        }
+      );
   }
 
   updateClient(): void {
-    this.updateSub = this.clientService
+    this.clientService
       .updateClient(this.clientId, this.formGroup.value)
-      .subscribe((data) => {
-        this.getClients();
-      });
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (res) => {
+          this.getClients();
+        },
+        (err) => {
+          console.log(err.message);
+        }
+      );
   }
 
   deleteClient(): void {
     setTimeout(() => {
       for (let client of this.clients) {
         if (client.id === this.clientId) {
-          this.delSub = this.clientService
+          this.clientService
             .deleteClient(this.clientId)
-            .subscribe((data) => {
-              this.getClients();
-            });
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(
+              (res) => {
+                this.getClients();
+              },
+              (err) => {
+                console.log(err.message);
+              }
+            );
         }
       }
     }, 0);
@@ -116,10 +140,15 @@ export class ClientComponent implements OnInit, OnDestroy {
     this.getClients();
   }
   ngOnDestroy(): void {
-    this.getSub.unsubscribe();
-    this.delSub.unsubscribe();
-    this.postSub.unsubscribe();
-    this.updateSub.unsubscribe();
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  // Create client
+  openCreateDialog(): void {
+    this.edit = false;
+    this.toggleDialog();
+    this.buildingForm();
   }
 
   addNewClient(): void {
@@ -147,12 +176,7 @@ export class ClientComponent implements OnInit, OnDestroy {
     this.postClient();
   }
 
-  openCreateDialog(): void {
-    this.edit = false;
-    this.toggleDialog();
-    this.buildingForm();
-  }
-
+  // Edit client
   openEditDialog(): void {
     this.toggleDialog();
     this.edit = true;
