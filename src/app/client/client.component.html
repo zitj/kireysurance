@@ -9,7 +9,7 @@
         <th>Duration</th>
         <th>Number of accounts</th>
         <th>Date of creation</th>
-        <th>Call to action</th>
+        <th [style]="{ textAlign: 'center' }">Call to action</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-client>
@@ -19,11 +19,23 @@
         <td>{{ client.duration }}</td>
         <td>{{ client.numberOfAccounts }}</td>
         <td>{{ client.dateOfCreation }}</td>
-        <td>
-          <button type="button" pButton (click)="openEditDialog()">Edit</button
-          ><button type="button" pButton (click)="deleteClient()">
-            Delete
-          </button>
+        <td [style]="{ textAlign: 'center' }">
+          <button
+            id="editBtn"
+            type="button"
+            pButton
+            (click)="openEditDialog()"
+            icon="pi pi-pencil"
+            class="p-button-secondary"
+          ></button
+          ><button
+            id="deleteBtn"
+            type="button"
+            pButton
+            (click)="deleteClient()"
+            icon="pi pi-trash"
+            class="p-button-danger"
+          ></button>
         </td>
       </tr>
     </ng-template>

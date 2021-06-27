@@ -1,20 +1,28 @@
 {
   "clients": [
     {
-      "code": "M5THQ",
-      "name": "Aleksandar Ve",
-      "duration": "1",
-      "numberOfAccounts": "1",
+      "code": "4YHQX",
+      "name": "Aleksandar V",
+      "duration": 17,
+      "numberOfAccounts": 15,
       "dateOfCreation": "6/27/2021",
       "id": 1
     },
     {
-      "code": "RTTLU8",
-      "name": "Dimitrije",
-      "duration": 12,
+      "code": "SLNOOH",
+      "name": "Dimitrije Dimitrijevic",
+      "duration": 2,
       "numberOfAccounts": 13,
       "dateOfCreation": "6/27/2021",
       "id": 2
+    },
+    {
+      "code": "TGXEI",
+      "name": "Editovan",
+      "duration": 2,
+      "numberOfAccounts": 4,
+      "dateOfCreation": "6/27/2021",
+      "id": 3
     }
   ]
 }
