@@ -155,6 +155,10 @@ header #hamburger span.active {
   header {
     height: 80px;
   }
+  header .logo img {
+    margin: 22px 6px 0px 0px;
+    height: 40px;
+  }
   header .logo h1 {
     font-size: 1.5em;
     line-height: 50px;
