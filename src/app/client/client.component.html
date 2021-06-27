@@ -1,7 +1,13 @@
 <section>
   <h1>{{ heading }}</h1>
 
-  <p-table [value]="clients" *ngIf="this.clients.length > 0">
+  <p-table
+    [scrollable]="true"
+    scrollHeight="340px"
+    [responsive]="true"
+    [value]="clients"
+    *ngIf="this.clients.length > 0"
+  >
     <ng-template pTemplate="header">
       <tr>
         <th>Code</th>
