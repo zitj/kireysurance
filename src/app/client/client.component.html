@@ -1,5 +1,8 @@
+<div class="background">
+  <img src="../../assets/img/lion.png" alt="" />
+</div>
 <section>
-  <div class="backdrop" *ngIf="displayDialog"></div>
+  <div class="backdrop" *ngIf="displayDialog" (click)="toggleDialog()"></div>
   <h1>{{ heading }}</h1>
   <p-progressSpinner *ngIf="loadingUsers"></p-progressSpinner>
 

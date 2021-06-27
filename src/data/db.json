@@ -2,7 +2,7 @@
   "clients": [
     {
       "code": "L4WUCI",
-      "name": "Aleksandar V",
+      "name": "Aleksandar Veljkovic",
       "duration": 12,
       "numberOfAccounts": 1,
       "dateOfCreation": "6/27/2021",
@@ -10,7 +10,7 @@
     },
     {
       "code": "HTC6AE",
-      "name": "Milica S",
+      "name": "Milica Stankovic",
       "duration": 3,
       "numberOfAccounts": 1,
       "dateOfCreation": "6/27/2021",
@@ -18,7 +18,7 @@
     },
     {
       "code": "SV4EZD",
-      "name": "Dimitrije D",
+      "name": "Dimitrije Dimitrijevic",
       "duration": 5,
       "numberOfAccounts": 3,
       "dateOfCreation": "6/27/2021",
