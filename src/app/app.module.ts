@@ -21,6 +21,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ButtonModule } from 'primeng/button';
     InputTextModule,
     MessageModule,
     ButtonModule,
+    ProgressSpinnerModule,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,7 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,25 @@
 section {
   width: 80%;
   margin: 5% auto;
+  display: relative;
+}
+
+section p-progressspinner {
+  margin-left: 45%;
+}
+
+section #addClientBtn {
+  width: 100%;
+  margin: 5% auto 0;
+  font-size: 1.5em;
+}
+
+section #deleteBtn {
+  margin-left: 10px;
+}
+
+section #dialogBtn {
+  width: 100%;
 }
 
 section h1 {
@@ -25,7 +44,42 @@ section .inputHolder label {
 }
 
 section .inputHolder input {
-  height: 30px;
   outline: none;
+}
+
+section .inputHolder input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+section .inputHolder p-input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+section .backdrop {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 800px) {
+  section {
+    width: 95%;
+    margin: 5% auto;
+  }
+  section h1 {
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(3, 3, 65, 0.164);
+  }
+}
+
+@media (max-width: 420px) {
+  section h1 {
+    font-size: 2em;
+  }
 }
 /*# sourceMappingURL=client.component.css.map */

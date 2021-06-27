@@ -48,11 +48,11 @@ section .illustration img {
     line-height: 50px;
   }
   section .illustration {
-    right: -30%;
+    right: 0%;
   }
   section .illustration img {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    -webkit-transform: scale(0.6) translateX(30em) translateY(-15em);
+            transform: scale(0.6) translateX(30em) translateY(-15em);
   }
 }
 

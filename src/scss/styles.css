@@ -31,4 +31,11 @@ header,
 footer {
   background: #d0e9f5;
 }
+
+@media (max-width: 1500px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

@@ -1,10 +1,12 @@
 <section>
+  <div class="backdrop" *ngIf="displayDialog"></div>
   <h1>{{ heading }}</h1>
+  <p-progressSpinner *ngIf="loadingUsers"></p-progressSpinner>
 
   <!-- Table -->
   <p-table
     [scrollable]="true"
-    scrollHeight="340px"
+    scrollHeight="350px"
     [responsive]="true"
     [value]="clients"
     *ngIf="this.clients.length > 0"
@@ -33,7 +35,7 @@
             pButton
             (click)="openEditDialog()"
             icon="pi pi-pencil"
-            class="p-button-secondary"
+            class="p-button-primary"
           ></button
           ><button
             id="deleteBtn"
@@ -49,11 +51,7 @@
   </p-table>
 
   <!-- Dialog with form -->
-  <p-dialog
-    [header]="header"
-    [modal]="displayDialog"
-    [(visible)]="displayDialog"
-  >
+  <p-dialog [header]="header" [(visible)]="displayDialog">
     <form
       [formGroup]="formGroup"
       (ngSubmit)="!edit ? addNewClient() : editClient()"

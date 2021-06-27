@@ -118,12 +118,13 @@ header #hamburger span.active {
   }
   header #hamburger {
     display: block;
+    z-index: 2;
   }
   header nav {
     background: #09519d;
     position: absolute;
     right: 0%;
-    top: 8.5%;
+    top: 80px;
     height: 300px;
     padding: 2% 1.5%;
     -webkit-box-orient: vertical;
@@ -154,9 +155,6 @@ header #hamburger span.active {
   header {
     height: 80px;
   }
-  header nav {
-    top: 9.7%;
-  }
   header .logo h1 {
     font-size: 1.5em;
     line-height: 50px;
@@ -165,14 +163,7 @@ header #hamburger span.active {
 
 @media (max-width: 390px) {
   header nav {
-    top: 11%;
     padding: 2% 3%;
-  }
-}
-
-@media (max-width: 320px) {
-  header nav {
-    top: 12.7%;
   }
 }
 /*# sourceMappingURL=header.component.css.map */

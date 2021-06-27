@@ -21,6 +21,7 @@ export class ClientComponent implements OnInit, OnDestroy {
 
   formGroup: FormGroup = new FormGroup({});
 
+  loadingUsers: boolean = true;
   validNumberOfAccounts: boolean = false;
   validDuration: boolean = false;
   validName: boolean = false;
@@ -74,6 +75,7 @@ export class ClientComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (res) => {
+          this.loadingUsers = false;
           this.clients = res.reverse();
           if (this.clients.length === 0) {
             this.heading = 'There are no clients';

@@ -7,6 +7,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [],
@@ -19,6 +20,7 @@ import { MessageModule } from 'primeng/message';
     InputTextModule,
     InputNumberModule,
     MessageModule,
+    ProgressSpinnerModule,
   ],
 })
 export class ClientModule {}

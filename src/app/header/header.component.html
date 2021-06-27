@@ -5,7 +5,12 @@
     </div>
 
     <nav [ngClass]="{ active: showNav }">
-      <a href="">Home</a>
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        (click)="toggleNavigation()"
+        >Home</a
+      >
       <a
         routerLink="/client"
         routerLinkActive="active"

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap");
+@import "./variables";
 html {
   scroll-behavior: smooth;
 }
@@ -13,16 +14,22 @@ h1,
 h2,
 h3,
 h4 {
-  color: #09519d;
+  color: $kireyNavy;
 }
 p {
-  color: #407bcd;
+  color: $kireyText;
 }
 header,
 #bottom {
-  background: #09519d;
+  background: $kireyNavy;
 }
 #hero,
 footer {
-  background: #d0e9f5;
+  background: $kireySky;
+}
+@media (max-width: 1500px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }

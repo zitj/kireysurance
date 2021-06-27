@@ -41,9 +41,9 @@ section {
       }
     }
     .illustration {
-      right: -30%;
+      right: 0%;
       img {
-        transform: scale(0.7);
+        transform: scale(0.6) translateX(30em) translateY(-15em);
       }
     }
   }
