@@ -16,18 +16,23 @@ export class ClientComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder
   ) {}
 
-  heading: string = '';
-  header: string = 'Add client';
-  date = new Date(Date.now());
-  edit: boolean = false;
-  clients: Client[] = [];
-
   private getSub: Subscription = new Subscription();
   private postSub: Subscription = new Subscription();
   private delSub: Subscription = new Subscription();
   private updateSub: Subscription = new Subscription();
 
   formGroup: FormGroup = new FormGroup({});
+
+  validNumberOfAccounts: boolean = false;
+  validDuration: boolean = false;
+  validName: boolean = false;
+  edit: boolean = false;
+
+  heading: string = '';
+  header: string = 'Add client';
+
+  date = new Date(Date.now());
+  clients: Client[] = [];
 
   displayDialog: boolean = false;
   clientCode: string = '';
@@ -43,6 +48,9 @@ export class ClientComponent implements OnInit, OnDestroy {
       } else {
         this.header = 'Add client';
       }
+      this.validName = false;
+      this.validDuration = false;
+      this.validNumberOfAccounts = false;
     }, 0);
   }
 
@@ -52,35 +60,41 @@ export class ClientComponent implements OnInit, OnDestroy {
     this.formGroup = this.formBuilder.group({
       code: [randomString],
       name: ['', [Validators.required]],
-      duration: ['', [Validators.required]],
-      numberOfAccounts: ['', [Validators.required]],
+      duration: ['1', [Validators.required]],
+      numberOfAccounts: ['1', [Validators.required]],
       dateOfCreation: this.date.toLocaleDateString(),
     });
+  }
+
+  setClientId(event: any): void {
+    this.clientId = +event.currentTarget.id;
   }
 
   getClients(): void {
     this.getSub = this.clientService.getClients().subscribe((data) => {
       this.clients = data.reverse();
       if (this.clients.length === 0) {
-        this.heading = 'Currently there are no clients';
+        this.heading = 'There are no clients';
       } else {
         this.heading = 'Table of clients';
       }
     });
   }
 
-  ngOnInit(): void {
-    this.buildingForm();
-    this.getClients();
-  }
-  ngOnDestroy(): void {
-    this.getSub.unsubscribe();
-    this.delSub.unsubscribe();
-    this.postSub.unsubscribe();
+  postClient(): void {
+    this.postSub = this.clientService
+      .createClient(this.formGroup.value)
+      .subscribe((data) => {
+        this.getClients();
+      });
   }
 
-  setClientId(event: any): void {
-    this.clientId = +event.currentTarget.id;
+  updateClient(): void {
+    this.updateSub = this.clientService
+      .updateClient(this.clientId, this.formGroup.value)
+      .subscribe((data) => {
+        this.getClients();
+      });
   }
 
   deleteClient(): void {
@@ -97,13 +111,40 @@ export class ClientComponent implements OnInit, OnDestroy {
     }, 0);
   }
 
+  ngOnInit(): void {
+    this.buildingForm();
+    this.getClients();
+  }
+  ngOnDestroy(): void {
+    this.getSub.unsubscribe();
+    this.delSub.unsubscribe();
+    this.postSub.unsubscribe();
+    this.updateSub.unsubscribe();
+  }
+
   addNewClient(): void {
+    this.formGroup.value.name.trim() === ''
+      ? (this.validName = true)
+      : (this.validName = false);
+
+    this.formGroup.value.duration <= 0
+      ? (this.validDuration = true)
+      : (this.validDuration = false);
+
+    this.formGroup.value.numberOfAccounts <= 0
+      ? (this.validNumberOfAccounts = true)
+      : (this.validNumberOfAccounts = false);
+
+    if (
+      this.formGroup.value.name.trim() === '' ||
+      this.formGroup.value.duration <= 0 ||
+      this.formGroup.value.numberOfAccounts <= 0
+    ) {
+      return;
+    }
+
     this.toggleDialog();
-    this.postSub = this.clientService
-      .createClient(this.formGroup.value)
-      .subscribe((data) => {
-        this.getClients();
-      });
+    this.postClient();
   }
 
   openCreateDialog(): void {
@@ -131,11 +172,26 @@ export class ClientComponent implements OnInit, OnDestroy {
   }
 
   editClient(): void {
+    this.formGroup.value.name.trim() === ''
+      ? (this.validName = true)
+      : (this.validName = false);
+
+    this.formGroup.value.duration <= 0
+      ? (this.validDuration = true)
+      : (this.validDuration = false);
+
+    this.formGroup.value.numberOfAccounts <= 0
+      ? (this.validNumberOfAccounts = true)
+      : (this.validNumberOfAccounts = false);
+
+    if (
+      this.formGroup.value.name.trim() === '' ||
+      this.formGroup.value.duration <= 0 ||
+      this.formGroup.value.numberOfAccounts <= 0
+    ) {
+      return;
+    }
     this.toggleDialog();
-    this.updateSub = this.clientService
-      .updateClient(this.clientId, this.formGroup.value)
-      .subscribe((data) => {
-        this.getClients();
-      });
+    this.updateClient();
   }
 }

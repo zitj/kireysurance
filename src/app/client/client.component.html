@@ -9,7 +9,7 @@
         <th>Duration</th>
         <th>Number of accounts</th>
         <th>Date of creation</th>
-        <th>Edit or delete</th>
+        <th>Call to action</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-client>
@@ -38,21 +38,63 @@
       (ngSubmit)="!edit ? addNewClient() : editClient()"
     >
       <div class="inputHolder">
-        <label for="name">Name</label>
-        <input formControlName="name" type="text" />
-      </div>
-      <div class="inputHolder">
-        <label for="duration">Duration</label>
-        <input formControlName="duration" type="number" />
-      </div>
-      <div class="inputHolder">
-        <label for="numberOfAccounts">Number of accounts</label>
-        <input formControlName="numberOfAccounts" type="number" />
+        <label
+          for="name"
+          [ngClass]="{
+            'p-error':
+              (formGroup.touched && formGroup.value.name.trim() === '') ||
+              validName
+          }"
+          >Name</label
+        >
+        <input formControlName="name" type="text" required pInputText />
+        <small
+          class="p-error"
+          *ngIf="
+            (formGroup.touched && formGroup.value.name.trim() === '') ||
+            validName
+          "
+          >Name is required</small
+        >
       </div>
 
-      <button type="submit">{{ header }}</button>
+      <div class="inputHolder">
+        <label
+          for="duration"
+          [ngClass]="{
+            'p-error': validDuration
+          }"
+          >Duration</label
+        >
+        <p-inputNumber formControlName="duration"></p-inputNumber>
+        <small class="p-error" *ngIf="validDuration"
+          >Duration must be greater than 0</small
+        >
+      </div>
+      <div class="inputHolder">
+        <label
+          for="numberOfAccounts"
+          [ngClass]="{
+            'p-error': validNumberOfAccounts
+          }"
+          >Number of accounts</label
+        >
+        <p-inputNumber formControlName="numberOfAccounts"></p-inputNumber>
+        <small class="p-error" *ngIf="validNumberOfAccounts"
+          >At least 1 account is needed</small
+        >
+      </div>
+
+      <button id="dialogBtn" type="submit" pButton [label]="header"></button>
     </form>
   </p-dialog>
 
-  <button type="button" pButton (click)="openCreateDialog()">Add client</button>
+  <button
+    id="addClientBtn"
+    type="button"
+    pButton
+    (click)="openCreateDialog()"
+    class="p-button-primary"
+    label="Add client"
+  ></button>
 </section>

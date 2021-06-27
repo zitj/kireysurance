@@ -17,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessageModule } from 'primeng/message';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ClientComponent,
   ],
-  exports: [TableModule, DialogModule, InputNumberModule],
+  exports: [
+    TableModule,
+    DialogModule,
+    InputNumberModule,
+    InputTextModule,
+    MessageModule,
+    ButtonModule,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,8 +51,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DialogModule,
     BrowserAnimationsModule,
     InputNumberModule,
+    InputTextModule,
+    MessageModule,
     FormsModule,
     ReactiveFormsModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

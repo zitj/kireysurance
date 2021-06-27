@@ -1,11 +1,21 @@
 section {
   width: 80%;
   margin: 5% auto;
+
+  #addClientBtn {
+    width: 100%;
+    margin: 5% auto 0;
+    font-size: 1.5em;
+  }
+  #dialogBtn {
+    width: 100%;
+  }
   h1 {
     text-align: center;
     font-size: 3em;
     font-weight: 200;
   }
+
   .inputHolder {
     display: flex;
     flex-direction: column;
@@ -14,8 +24,19 @@ section {
       margin-bottom: 0.4em;
     }
     input {
-      height: 30px;
       outline: none;
+
+      &.ng-touched.ng-invalid {
+        border: 1px solid red;
+      }
     }
+    p-input {
+      &.ng-touched.ng-invalid {
+        border: 1px solid red;
+      }
+    }
+  }
+  p-dialog #ui-dialog {
+    background: red;
   }
 }
