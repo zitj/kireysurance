@@ -13,7 +13,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { ClientModule } from './client/client.module';
 import { ClientComponent } from './client/client.component';
 import { TableModule } from 'primeng/table';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputNumberModule } from 'primeng/inputnumber';
