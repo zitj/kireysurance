@@ -66,6 +66,7 @@ export class ClientComponent implements OnInit, OnDestroy {
 
   setClientId(event: any): void {
     this.clientId = +event.currentTarget.id;
+    this.clientService.clientId = +event.currentTarget.id;
   }
 
   // HTTPS
@@ -118,23 +119,17 @@ export class ClientComponent implements OnInit, OnDestroy {
   }
 
   deleteClient(): void {
-    setTimeout(() => {
-      for (let client of this.clients) {
-        if (client.id === this.clientId) {
-          this.clientService
-            .deleteClient(this.clientId)
-            .pipe(takeUntil(this.unsubscribe$))
-            .subscribe(
-              (res) => {
-                this.getClients();
-              },
-              (err) => {
-                console.log(err.message);
-              }
-            );
+    this.clientService
+      .deleteClient(this.clientService.clientId)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (res) => {
+          this.getClients();
+        },
+        (err) => {
+          console.log(err.message);
         }
-      }
-    }, 0);
+      );
   }
 
   ngOnInit(): void {

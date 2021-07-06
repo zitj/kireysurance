@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class ClientService {
   constructor(public http: HttpClient) {}
 
+  clientId: number = 99999;
   url = environment.url;
 
   getClients(): Observable<Client[]> {
