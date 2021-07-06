@@ -8,6 +8,11 @@
   opacity: 0.022;
   -webkit-animation: fadeIn 0.3s ease-in-out;
           animation: fadeIn 0.3s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 section {
@@ -30,7 +35,8 @@ section #addClientBtn {
   font-size: 1.5em;
 }
 
-section #deleteBtn {
+section #deleteBtn,
+section #editBtn {
   margin-left: 10px;
 }
 

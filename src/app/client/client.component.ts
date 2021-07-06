@@ -118,9 +118,9 @@ export class ClientComponent implements OnInit, OnDestroy {
       );
   }
 
-  deleteClient(): void {
+  deleteClient(event: any): void {
     this.clientService
-      .deleteClient(this.clientService.clientId)
+      .deleteClient(+event.target.parentNode.parentNode.parentNode.id)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (res) => {

@@ -33,6 +33,15 @@
         <td>{{ client.dateOfCreation }}</td>
         <td [style]="{ textAlign: 'center' }">
           <button
+            id="profileBtn"
+            type="button"
+            pButton
+            icon="pi pi-user"
+            class="p-button-warning"
+            [routerLink]="['/clients', client.id]"
+            routerLinkActive="active"
+          ></button>
+          <button
             id="editBtn"
             type="button"
             pButton
@@ -44,7 +53,7 @@
             id="deleteBtn"
             type="button"
             pButton
-            (click)="deleteClient()"
+            (click)="deleteClient($event)"
             icon="pi pi-trash"
             class="p-button-danger"
           ></button>

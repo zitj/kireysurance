@@ -22,6 +22,7 @@ import { MessageModule } from 'primeng/message';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     AboutComponent,
     FooterComponent,
     ClientComponent,
+    ProfileComponent,
   ],
   exports: [
     TableModule,
